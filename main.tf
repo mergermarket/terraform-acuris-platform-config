@@ -1,10 +1,16 @@
-data "aws_iam_account_alias" "current" {}
-data "aws_region" "current" {}
+provider "aws" {
+  alias = "platform_config_bucket"
+  region = "eu-west-1"
+}
 
+data "aws_iam_account_alias" "current" {}
 
 data "aws_s3_bucket_object" "platform_config" {
+  providers = {
+    aws = aws.platform_config_bucket
+  }
   bucket = "${var.bucket}"
-  key = "${data.aws_iam_account_alias.current.account_alias}/${data.aws_region.current.name}.json"
+  key = "${data.aws_iam_account_alias.current.account_alias}/${var.platform_config_region}.json"
 }
 
 output "config" {
