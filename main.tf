@@ -1,7 +1,19 @@
-provider "aws" {
-  alias = "platform_config_bucket"
-  region = "eu-west-1"
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      configuration_aliases = [
+        aws.platform_config_bucket,
+      ]
+    }
+  }
 }
+
+
+# provider "aws" {
+#   alias = "platform_config_bucket"
+#   region = "eu-west-1"
+# }
 
 data "aws_iam_account_alias" "current" {}
 
