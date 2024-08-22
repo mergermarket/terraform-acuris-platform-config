@@ -3,7 +3,7 @@ variable "bucket" {
     description = ""
 }
 
-variable "config"{
+variable "config_name"{
     type = string
     default = "platform_config"
     description = "Name of the config section in the platform_config file"

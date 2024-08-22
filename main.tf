@@ -12,5 +12,5 @@ data "aws_s3_bucket_object" "platform_config" {
 }
 
 output "config" {
-    value =  tomap(jsondecode(data.aws_s3_bucket_object.platform_config.body)["${var.config}"])
+    value =  tomap(jsondecode(data.aws_s3_bucket_object.platform_config.body)["${var.config_name}"])
 }
