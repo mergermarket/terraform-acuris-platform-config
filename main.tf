@@ -1,7 +1,13 @@
+locals {
+  region = var.platform_config_region != "" ? var.platform_config_region : data.aws_region.current.name
+}
+
 provider "aws" {
   alias = "platform_config_bucket"
   region = "eu-west-1"
 }
+
+data "aws_region" "current" {}
 
 data "aws_iam_account_alias" "current" {}
 

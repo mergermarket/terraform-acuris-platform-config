@@ -10,6 +10,6 @@ variable "config_name"{
 }
 variable "platform_config_region" {
     type        = string
-    default     = "eu-west-1"
+    default     = ""
     description = "Aws region of desired platform target"
 }
