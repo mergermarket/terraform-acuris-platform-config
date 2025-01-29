@@ -13,3 +13,9 @@ variable "platform_config_region" {
     default     = "eu-west-1"
     description = "Aws region of desired platform target"
 }
+
+variable "datacenter" {
+    type = string
+    default = ""
+    description = "Use this variable to specify a platform_config folder that differs from the account alias"
+}
