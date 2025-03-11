@@ -14,8 +14,8 @@ variable "platform_config_region" {
     description = "Aws region of desired platform target"
 }
 
-variable "datacenter" {
+variable "platform_config_key" {
     type = string
     default = ""
-    description = "Use this variable to specify a platform_config folder that differs from the account alias"
+    description = "Set the S3 bucket key's direct path for use within the platform_config."
 }
