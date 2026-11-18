@@ -1,5 +1,5 @@
 locals {
-  region = coalesce(var.platform_config_region, data.aws_region.current.region)
+  region = coalesce(var.platform_config_region, data.aws_region.current.name)
   platform_config_key = coalesce(var.platform_config_key, "${data.aws_iam_account_alias.current.account_alias}/${local.region}.json")
 }
 provider "aws" {
